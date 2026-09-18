@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a template captures — Pick, Pack, Go</title>
+<meta name="description" content="Exactly what is stored, what isn&#x27;t, and why the omissions are the point.">
+<link rel="stylesheet" href="/style.css">
+<script src="/search.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="crumb"><a href="/">Silly Salmon</a><span class="sl">/</span><a href="/pick-pack-go/">Pick, Pack, Go</a><span class="sl">/</span><a href="/pick-pack-go/reference/">Reference</a><span class="sl">/</span><span class="cur">What a template captures</span></div><div class="cols"><div class="rail"><a class="brand" href="/">Silly<br>Salmon</a><p class="lab">Pick, Pack, Go</p><nav><a href="/pick-pack-go/guide/">Guide</a><a href="/pick-pack-go/reference/" aria-current="page">Reference</a><a href="/pick-pack-go/why/">Why</a></nav><div class="navblock"><p class="lab">Silly Salmon</p><nav><a href="/pick-pack-go/">Pick, Pack, Go</a><a href="/pick-pack-go/support/">Support</a></nav></div></div><div class="index"><p class="lab">Reference</p><div class="searchwrap"><label class="skip" for="q">Search</label><input id="q" type="search" placeholder="Search the reference" autocomplete="off"><ul id="results" hidden></ul></div><div class="navblock"><p class="lab">The model</p><nav><a href="/pick-pack-go/reference/data-model/">Masters and instances</a><a href="/pick-pack-go/reference/phases/">Five phases</a><a href="/pick-pack-go/reference/core-sections/">The 11 core sections</a></nav></div><div class="navblock"><p class="lab">The numbers</p><nav><a href="/pick-pack-go/reference/quantity-formulas/">Quantity formulas</a><a href="/pick-pack-go/reference/templates/" aria-current="page">What a template keeps</a></nav></div></div><main class="pane" id="main"><h1>What a template captures</h1><p class="sub">Exactly what is stored, what isn't, and why the omissions are the point.</p><p><strong>Verified against:</strong> the working tree, 2026-09-18.</p>
+<table><thead><tr><th>Captured</th><th>Not captured</th></tr></thead><tbody><tr><td>Sections, and which items are in them</td><td>Dates</td></tr><tr><td>Items, including ones you added</td><td>Destination</td></tr><tr><td>Quantities and formulas</td><td>Trip name</td></tr><tr><td>Notes</td><td>What you'd ticked</td></tr><tr><td>Custom section names</td><td>Trip status</td></tr><tr><td>Trip tags</td><td></td></tr><tr><td>Nominal length in nights</td><td></td></tr></tbody></table>
+<hr>
+<h2 id="the-shape-of-the-idea">The shape of the idea</h2>
+<p>A template is a trip with the trip-specific parts removed. Everything about <em>how you pack</em> is kept; everything about <em>one particular journey</em> is dropped.</p>
+<p>That's why the omissions matter more than the inclusions. A template that remembered your dates would be a copy of a trip. A template that forgets them is a description of how you travel.</p>
+<h2 id="ticks-are-never-captured">Ticks are never captured</h2>
+<p>A template always arrives fresh. There is no way to save a half-packed state, which is deliberate: a template carrying someone else's progress would be worse than useless on the night you need it.</p>
+<h2 id="nominal-length">Nominal length</h2>
+<p>Every template holds a length in nights. It does <strong>two</strong> things at two different moments, and only one of them is obvious.</p>
+<p><strong>At authoring time</strong> it becomes a trip-duration category that filters which library items seed into the template at all.</p>
+<p><strong>At trip creation</strong> it pre-fills the return date and seeds the auto-adjust window.</p>
+<p>So a "Ski Week" template built without noticing the duration control gets a 3-night item set — the silent default — and later produces a 3-night trip. <strong>Neither moment says so.</strong> <em>(Tracked as <code>U62</code>. The ask is legibility at the point of effect, not removing the default; fewer choices is the design for this audience.)</em></p>
+<h2 id="quantities-travel-as-rules-not-numbers">Quantities travel as rules, not numbers</h2>
+<p>A template stores the <em>formula</em>, so quantities compute against the dates of whatever trip you make from it. One template correctly clothes a weekend and a fortnight.</p>
+<p>See <a class="inline" href="/pick-pack-go/reference/quantity-formulas/#templates-and-length">Quantity formulas → Templates and length</a>.</p>
+<h2 id="customisation-survives">Customisation survives</h2>
+<p>Everything you changed is kept: renamed sections, added items, adjusted quantities, notes. That's the whole point — the executive-function cost of setting a trip up gets paid once rather than every time.</p>
+<h2 id="where-templates-diverge-from-the-library">Where templates diverge from the library</h2>
+<p>A template is a snapshot, exactly like a trip. Editing your library does not reach into templates that already exist, and editing a template does not write back.</p>
+<p>This is the most common source of the "my three libraries have drifted apart" feeling: the Template, Section and Item libraries are independent snapshots by design, and nothing reconciles them automatically.</p>
+<hr>
+<p><em>Related: <a class="inline" href="/pick-pack-go/reference/data-model/">Masters and instances</a> · <a class="inline" href="/pick-pack-go/reference/quantity-formulas/">Quantity formulas</a> · <a class="inline" href="../../guide/templates/">Guide: Templates</a></em></p><div class="pagefoot"><a href="/pick-pack-go/reference/">All of Reference</a></div><div class="mobilenav"><p class="lab">More in Reference</p><div class="navblock"><p class="lab">The model</p><nav><a href="/pick-pack-go/reference/data-model/">Masters and instances</a><a href="/pick-pack-go/reference/phases/">Five phases</a><a href="/pick-pack-go/reference/core-sections/">The 11 core sections</a></nav></div><div class="navblock"><p class="lab">The numbers</p><nav><a href="/pick-pack-go/reference/quantity-formulas/">Quantity formulas</a><a href="/pick-pack-go/reference/templates/" aria-current="page">What a template keeps</a></nav></div></div></main></div>
+</body>
+</html>
