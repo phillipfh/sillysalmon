@@ -49,3 +49,23 @@ Light (300) is used exactly once on the whole site: the landing statement.
 
 No App Store button (the app isn't live), and no links to `/guide/`, `/reference/` or `/why/`
 (not built). A stub that links to nothing is worse than one that doesn't mention it.
+
+## Hosting: GitHub Pages
+
+Chosen because it adds no new accounts and no new services. Free tier needs a **public** repo —
+fine here: eight files, no secrets.
+
+**`CNAME`** holds the custom domain. GitHub Pages reads it on every deploy; deleting it unsets the
+domain. **`.nojekyll`** stops Pages running Jekyll over the output, which would otherwise ignore
+any file or folder beginning with an underscore.
+
+### DNS, at Squarespace
+
+Apex `sillysalmon.co` → four A records at GitHub's Pages IPs, plus `www` as a CNAME to
+`<username>.github.io`. **Confirm the current IPs in GitHub's own docs before entering them** —
+they change rarely, but they do change, and a stale IP is a dead site.
+
+### sillysalmon.studio
+
+Squarespace **domain forwarding** → `sillysalmon.co`. Handled at the registrar; no second host,
+no proxy, nothing extra to maintain.
