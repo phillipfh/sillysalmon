@@ -72,10 +72,14 @@ tr td:first-child{color:var(--ink)}
 .gist li{font-size:15.5px;line-height:1.5;padding-left:17px;position:relative;margin:0}
 .gist li::before{content:"";position:absolute;left:0;top:.63em;width:5px;height:5px;background:var(--ink-3)}
 
-.shot{border:1px dashed var(--rule-2);padding:26px 22px;margin:26px 0 8px;max-width:62ch;text-align:center}
-.shot .lab{padding:0;margin:0 0 7px}
-.shot .cap{font-size:13.5px;color:var(--ink-2);margin:0 0 6px;max-width:none}
-.shot figcaption{font-size:12.5px;color:var(--ink-3);font-style:italic}
+/* A real screenshot now, not a dashed placeholder. Capped at 330px because these are 1320px-wide
+   phone frames: any larger and one screenshot owns the whole scroll, which is the opposite of
+   what a reference page wants. The border keeps a light-mode shot from bleeding into the page
+   background — they are nearly the same off-white. */
+.shot{margin:26px 0 8px;max-width:62ch;text-align:center}
+.shot img{width:100%;max-width:330px;height:auto;display:block;margin:0 auto;
+          border:1px solid var(--rule);border-radius:12px}
+.shot figcaption{font-size:12.5px;color:var(--ink-3);font-style:italic;margin-top:9px}
 
 .pagefoot{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-3);max-width:64ch}
 .pagefoot a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule)}
