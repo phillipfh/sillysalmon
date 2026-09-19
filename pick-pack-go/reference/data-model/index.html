@@ -25,7 +25,7 @@
 <p><strong>Long-press a Pack list row → "Save to Item Library."</strong> It mints a <em>new</em> master and re-points that row — and every linked sibling — at it.</p>
 <p>Three limits:</p>
 <ol><li>It appears <strong>only</strong> when the row has no library ancestry at all. A row the library has already seen gets no door.</li><li>It is on the long-press menu only — <strong>not on any edit sheet.</strong> The moment you tap Save after editing is the moment nothing is offered.</li><li>There is <strong>no update path</strong>, only add-as-new.</li></ol>
-<p><em>(Live at <code>PhaseListView.swift:1353</code>, routed from <code>Pack List Collection.swift:1590</code>. Tracked as <code>U42</code> — an explicit, opt-in write-back is designed but not built.)</em></p>
+<p><em>(Live at <code>PhaseListView.swift:1353</code>, routed from <code>Pack List Collection.swift:1590</code>. An explicit, opt-in write-back is designed but not built.)</em></p>
 <h2 id="what-carries-identity">What carries identity</h2>
 <table><thead><tr><th>Thing</th><th>Identified by</th><th>Consequence</th></tr></thead><tbody><tr><td>Item on a trip</td><td>its own instance</td><td>two rows with the same name are two rows</td></tr><tr><td>Group membership</td><td><code>PackGroupRef</code></td><td>duplicate group names are allowed</td></tr><tr><td>Custom section</td><td>its own identity, not its name</td><td>renaming doesn't orphan it</td></tr><tr><td>Library item</td><td><strong>name</strong>, in several paths</td><td>a name collision can merge things you meant to keep apart</td></tr></tbody></table>
 <p>That last row is the sharp edge. The library treats an item's name as its identity in several places, so "Jacket" added twice may not stay two things.</p>
