@@ -29,7 +29,7 @@ hand edit is lost on the next build.
 
 ## How to add a page
 
-1. Write the markdown in `Marketing/How-To Documentation/`, `Marketing/Reference/` or
+1. Write the markdown in `Marketing/How-To Documentation/`, `Marketing/Reference Pages/` or
    `Marketing/Positioning/`, following that folder's existing page shape.
 2. Add one row to `../build/sitemap.py` — source stem, URL slug, nav title, track.
 3. Rebuild. Nav, search index and inter-page links all follow automatically.
@@ -60,7 +60,7 @@ preserved.
 
 ## ⚠️ The privacy policy exists twice
 
-The app carries its own copy in `Xcode Files/Valise/Helpers/LegalText.swift` and no longer links
+The app carries its own copy in `Development/Xcode/Valise/Helpers/LegalText.swift` and no longer links
 out. The copy here is what App Store Connect points at. **They must say the same thing.** Parity
 verified 2026-09-18 — all nine sections, same order. Re-check whenever either changes.
 
