@@ -60,7 +60,7 @@ preserved.
 
 ## ⚠️ The privacy policy exists twice
 
-The app carries its own copy in `Development/Xcode/Valise/Helpers/LegalText.swift` and no longer links
+The app carries its own copy in `Development/Xcode/PickPackGo/Helpers/LegalText.swift` and no longer links
 out. The copy here is what App Store Connect points at. **They must say the same thing.** Parity
 verified 2026-09-18 — all nine sections, same order. Re-check whenever either changes.
 
