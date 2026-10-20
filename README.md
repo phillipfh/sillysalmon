@@ -18,6 +18,7 @@ cd ../build && python3 build.py      # rebuild, then commit and push
 /pick-pack-go/support/            required by App Store Connect
 /pick-pack-go/privacy-policy/     required by App Store Connect
 /pick-pack-go/terms-of-use/
+/pick-pack-go/quick-start/        unlisted, app-styled walkthrough (build/quickstart.py)
 ```
 
 39 pages. No build step on the host — GitHub Pages serves these files as they are.
