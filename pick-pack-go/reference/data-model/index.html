@@ -24,11 +24,11 @@
 <p>Changed in 1.1 by R188. A trip row is a true instance with its own frozen copy, so deleting the library master it came from leaves the trip untouched. A <strong>template</strong> row is not: its item <em>is</em> the library item, with five per-template settings layered on top. Delete that item from your library and it leaves every template holding it — the warning counts them before you confirm.</p>
 <p>So the freeze protects trips, and only trips. A template follows the library.</p>
 <h2 id="the-partial-exception">The partial exception</h2>
-<p>One door exists, and it is narrower than most people expect.</p>
-<p><strong>Long-press a Pack List row → "Save to Item Library."</strong> It mints a <em>new</em> master and re-points that row — and every linked sibling — at it.</p>
-<p>Three limits:</p>
-<ol><li>It appears <strong>only</strong> when the row has no library ancestry at all. A row the library has already seen gets no door.</li><li>It is on the long-press menu only — <strong>not on any edit sheet.</strong> The moment you tap Save after editing is the moment nothing is offered.</li><li>There is <strong>no update path</strong>, only add-as-new.</li></ol>
-<p><em>(An explicit, opt-in write-back is designed but not built.)</em></p>
+<p>A trip writes to the library only when you tell it to, through one of two doors.</p>
+<p><strong>Long-press a trip row → "Save to Item Library,"</strong> or <strong>the row's editor → "Add to Item Library."</strong> Either one adds a new library item. The row that asked is left exactly as it was: it is not re-pointed at the new item.</p>
+<p>The limits:</p>
+<ol><li>The long-press offers Save <strong>only</strong> on a row that isn't a library item already, by its link or by its name (R276).</li><li>The editor's button follows the row. It reads <strong>Add to Item Library</strong> for a one-off, <strong>Update Item in Library</strong> for a row that differs from its library entry, and <strong>Save &amp; …</strong> when the sheet also has unsaved edits. An archived match is restored into the row's section (R186).</li><li><strong>Quantity writes as a rule, never as this trip's count,</strong> and the row's list never writes back: moving Sunscreen to Travel for one trip doesn't move it for every trip.</li></ol>
+<p>A template has no such door: every item in a template already is a library item (R188).</p>
 <h2 id="what-carries-identity">What carries identity</h2>
 <table><thead><tr><th>Thing</th><th>Identified by</th><th>Consequence</th></tr></thead><tbody><tr><td>Item on a trip</td><td>its own instance</td><td>two rows with the same name are two rows</td></tr><tr><td>Group membership</td><td><code>PackGroupRef</code></td><td>duplicate group names are allowed</td></tr><tr><td>Custom section</td><td>its own identity, not its name</td><td>renaming doesn't orphan it</td></tr><tr><td>Library item</td><td><strong>name</strong>, in several paths</td><td>a name collision can merge things you meant to keep apart</td></tr><tr><td>Library section</td><td>its own identity, but its <strong>name must be unique</strong> (1.1)</td><td>two sections cannot share a name; the emoji does not distinguish them</td></tr></tbody></table>
 <p>That last row is the sharp edge. The library treats an item's name as its identity in several places, so "Jacket" added twice may not stay two things.</p>
